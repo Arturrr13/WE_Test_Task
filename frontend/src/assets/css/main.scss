@@ -1,0 +1,119 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    &:focus {
+        outline: none;
+    }
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #1A1B22;
+    font-family: 'Inter', Arial;
+    font-size: .8333vw;
+    @media screen and (min-width:1921px){
+        font-size: unset;
+    }
+    @media screen and (max-width:760px){
+        font-size: unset;
+    }
+}
+
+
+a:hover, 
+button:hover{
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a, button {
+    transition: all .35s ease-in-out;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input[type=email],
+input[type=password],
+input[type=text]{
+    border-radius: em(10);
+    border: em(1) solid #CECECE;
+    outline: none;
+    background: transparent;
+    padding: em(8) em(45);
+    @include text(#fff, 1.25em, 500, 1em);
+    width: 100%;
+
+    &::placeholder {
+        color: #A4A4A4;
+        text-transform: capitalize;
+    }
+
+    &:focus {
+        border: em(1) solid #2CFA6F;
+    }
+
+    &:hover {
+        border: em(1) solid #2CFA6F;
+        box-shadow: 0 0 em(5) 0 #2CFA6F;
+    }
+}
+
+.form{
+    &__submitBtn:disabled{
+        border: em(1) solid #e42929;
+        background: linear-gradient(180deg, #ff3333 0%, #e42929 100%);
+        opacity: 0.75;
+        color: #FFF;
+
+        &:hover{
+            cursor: not-allowed;
+        }
+    }
+}
+
+button{
+    background: #E7A003;
+    border-radius: em(10);
+    padding: em(10) em(20); 
+    border: none;
+    color: #1A1B22;
+    font-size: em(25);
+    width: em(300);
+
+    &:hover{
+        background: #ffffff;
+    }
+}
+
+// -------------------------------------------------------------------------------------------
+
+::-webkit-scrollbar {
+    width: 5px;
+    position: relative;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #1A1B22; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #E7A003; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #E7A003; 
+}
